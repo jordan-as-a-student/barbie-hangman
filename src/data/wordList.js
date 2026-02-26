@@ -1,0 +1,22 @@
+export const wordList = [
+    'GLAMOROUS',
+    'FASHION',
+    'SPARKLE',
+    'PRINCESS',
+    'RUNWAY',
+    'ACCESSORY',
+    'BEAUTIFUL',
+    'DREAMHOUSE',
+    'MAGICAL',
+    'STYLE',
+    'CONFIDENCE',
+    'INSPIRING',
+    'BUTTERFLY',
+    'DIAMOND',
+    'FRIENDSHIP',
+    'ADVENTURE',
+    'STARLIGHT',
+    'UNICORN',
+    'FABULOUS',
+    'RADIANT'
+];

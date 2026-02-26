@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@400;600;800&display=swap');
+
+:root {
+    --font-script: 'Great Vibes', cursive;
+    --font-ui: 'Nunito', sans-serif;
+    --color-primary: #FF1493;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-ui);
+    background-color: #FCE4F6;
+    color: #E0218A;
+    overflow: hidden;
+    /* Prevent scrolling for single screen experience */
+    cursor: url('/sparkle-cursor.png'), auto;
+    /* Placeholder cursor */
+}
+
+h1,
+h2,
+h3,
+.script-font {
+    font-family: var(--font-script);
+}
+
+button {
+    font-family: var(--font-ui);
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+/* Scrollbar styling for modal content */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFC1E3;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF1493;
+    border-radius: 4px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1) rotate(180deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Layout Styles */
+.app-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: var(--bg-image, url('/images/background.jpg'));
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.main-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-stage-container {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: relative;
+    /* Prevent shrinking below required height for full image display */
+    min-height: 50vh;
+}
+
+.barbie-stage-area {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Align doll downwards */
+    position: relative;
+    /* Ensure Barbie does not stretch the container incorrectly on mobile */
+    min-width: 0;
+}
+
+.keyboard-controls-area {
+    /* Responsive height for keyboard / game */
+    height: auto;
+    min-height: 35vh;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mobile Friendly overrides */
+@media screen and (max-width: 768px) {
+    .game-stage-container {
+        /* On small screens, hide or shrink side panels */
+        padding: 0;
+    }
+
+    .wardrobe-panel {
+        /* They will be smaller or overlay */
+        width: 15vw !important;
+        font-size: 1rem !important;
+    }
+
+    .keyboard-controls-area {
+        min-height: 40vh;
+        padding: 5px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes float-sparkle {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.2) rotate(45deg);
+        opacity: 0.8;
+    }
+}

@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@400;600;800&display=swap');
 
+@font-face {
+    font-family: 'Dollie Script';
+    src: url('/fonts/DollieScript_PersonalUse.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
-    --font-script: 'Great Vibes', cursive;
+    --font-script: 'Dollie Script', 'Great Vibes', cursive;
     --font-ui: 'Nunito', sans-serif;
     --color-primary: #FF1493;
 }
@@ -103,21 +110,20 @@ button {
 .game-stage-container {
     flex: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 10px;
     position: relative;
     /* Prevent shrinking below required height for full image display */
-    min-height: 50vh;
+    min-height: 40vh;
 }
 
 .barbie-stage-area {
-    flex: 1;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    /* Align doll downwards */
+    align-items: center;
     position: relative;
     /* Ensure Barbie does not stretch the container incorrectly on mobile */
     min-width: 0;
@@ -127,12 +133,12 @@ button {
     /* Responsive height for keyboard / game */
     height: auto;
     min-height: 35vh;
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(5px);
-    padding: 10px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.4) 60%, rgba(255, 255, 255, 0) 100%);
+    padding: 20px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: none;
 }
 
 /* Mobile Friendly overrides */
@@ -140,17 +146,12 @@ button {
     .game-stage-container {
         /* On small screens, hide or shrink side panels */
         padding: 0;
-    }
-
-    .wardrobe-panel {
-        /* They will be smaller or overlay */
-        width: 15vw !important;
-        font-size: 1rem !important;
+        min-height: 30vh;
     }
 
     .keyboard-controls-area {
-        min-height: 40vh;
-        padding: 5px;
+        min-height: 50vh;
+        padding-bottom: 30px;
     }
 }
 

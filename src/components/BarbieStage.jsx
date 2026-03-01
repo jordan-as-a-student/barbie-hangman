@@ -15,12 +15,12 @@ const BarbieStage = ({ gameStatus }) => {
             position: 'relative',
             width: '100%',
             maxWidth: '350px',
-            height: '450px', // Fixed height based on your box image aspect ratio expectations
+            height: '45vh', // Responsive height
+            minHeight: '280px',
             margin: '0 auto',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            marginBottom: '40px'
         }}>
             {/* The Actual Barbie Box Image You Provide */}
             <div className={`barbie-box-container ${isWinner ? 'box-opened' : ''}`} style={{
@@ -56,6 +56,29 @@ const BarbieStage = ({ gameStatus }) => {
                     zIndex: 3
                 }}>
                     {barbieName}
+                </div>
+
+                {/* Slanted Help Text */}
+                <div style={{
+                    position: 'absolute',
+                    left: '-20px',
+                    top: '30%',
+                    transform: 'rotate(-20deg)',
+                    fontFamily: 'var(--font-script)',
+                    fontWeight: '900',
+                    color: '#FFF',
+                    backgroundColor: '#FF1493',
+                    padding: '8px 12px',
+                    borderRadius: '15px',
+                    boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
+                    width: '120px',
+                    textAlign: 'center',
+                    zIndex: 20,
+                    border: '3px solid #FFF',
+                    fontSize: '0.9rem',
+                    lineHeight: '1.2'
+                }}>
+                    HELP YOUR BARBIE ESCAPE HER BOX!
                 </div>
             </div>
 

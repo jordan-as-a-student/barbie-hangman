@@ -51,6 +51,15 @@ export const useHangmanGame = () => {
         }
     }, [guessedLetters, word, gameStatus]);
 
+    const revealHint = useCallback(() => {
+        if (gameStatus !== 'playing' || !word) return;
+        const unguessedLetters = word.split('').filter(char => !guessedLetters.has(char));
+        if (unguessedLetters.length > 0) {
+            const randomChar = unguessedLetters[Math.floor(Math.random() * unguessedLetters.length)];
+            guessLetter(randomChar);
+        }
+    }, [word, guessedLetters, gameStatus, guessLetter]);
+
     return {
         word,
         guessedLetters,
@@ -58,6 +67,7 @@ export const useHangmanGame = () => {
         maxLives,
         gameStatus,
         guessLetter,
-        startNewGame
+        startNewGame,
+        revealHint
     };
 };

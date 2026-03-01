@@ -124,10 +124,10 @@ const BarbieSelectionScreen = () => {
                         src={availableBarbies[selectedBarbieIndex].src}
                         alt="Selected Barbie"
                         style={{
-                            maxWidth: '100%',
-                            maxHeight: '100%',
+                            width: '100%',
+                            height: '100%',
                             objectFit: 'contain',
-                            scale: '1.2'
+                            filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.2))'
                         }}
                     />
                 </div>

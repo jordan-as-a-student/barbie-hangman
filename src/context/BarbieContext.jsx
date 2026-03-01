@@ -15,6 +15,10 @@ export const BarbieProvider = ({ children }) => {
         setHasSetupFinished(true);
     };
 
+    const resetSetup = () => {
+        setHasSetupFinished(false);
+    };
+
     const value = {
         theme,
         outfit,
@@ -23,7 +27,8 @@ export const BarbieProvider = ({ children }) => {
         selectedBarbieIndex,
         setSelectedBarbieIndex,
         hasSetupFinished,
-        finishSetup
+        finishSetup,
+        resetSetup
     };
 
     return (

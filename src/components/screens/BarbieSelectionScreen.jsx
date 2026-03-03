@@ -42,7 +42,7 @@ const BarbieSelectionScreen = () => {
             zIndex: 100
         }}>
 
-            <h1 style={{ color: '#FFF', fontFamily: 'var(--font-script)', fontSize: '3.5rem', textShadow: '2px 2px 4px rgba(0,0,0,0.3)', marginBottom: '20px' }}>
+            <h1 style={{ color: '#FFF', fontFamily: 'var(--font-script)', fontSize: 'var(--title-font)', textShadow: '2px 2px 4px rgba(0,0,0,0.3)', marginBottom: '20px', textAlign: 'center' }}>
                 Choose My Barbie
             </h1>
 
@@ -61,7 +61,8 @@ const BarbieSelectionScreen = () => {
                     fontSize: '1.5rem',
                     color: '#FF1493',
                     outline: 'none',
-                    width: '300px',
+                    width: '100%',
+                    maxWidth: 'var(--box-width)',
                     marginBottom: '30px',
                     boxShadow: 'inset 0 2px 5px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.2)'
                 }}
@@ -95,8 +96,10 @@ const BarbieSelectionScreen = () => {
 
                 {/* The Barbie Preview Stage */}
                 <div style={{
-                    width: '280px',
-                    height: '400px',
+                    width: '100%',
+                    maxWidth: 'var(--box-width)',
+                    height: 'var(--stage-height)',
+                    minHeight: 'var(--stage-min-h)',
                     background: 'rgba(255,255,255,0.2)',
                     borderRadius: '20px',
                     border: '4px solid #fff',
@@ -160,9 +163,9 @@ const BarbieSelectionScreen = () => {
                     color: '#FF1493',
                     border: 'none',
                     borderRadius: '30px',
-                    padding: '15px 40px',
+                    padding: 'var(--btn-pad)',
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '1.5rem',
+                    fontSize: 'var(--btn-font)',
                     fontWeight: '900',
                     cursor: 'pointer',
                     boxShadow: '0 8px 15px rgba(0,0,0,0.2)',

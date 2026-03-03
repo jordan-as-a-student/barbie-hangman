@@ -14,8 +14,8 @@ const WordBlanks = ({ word, guessedLetters, revealAll = false }) => {
                 const isRevealed = guessedLetters.has(letter) || revealAll;
                 return (
                     <div key={index} style={{
-                        width: '55px',
-                        height: '65px',
+                        width: 'var(--word-w)',
+                        height: 'var(--word-h)',
                         background: isRevealed ? '#fff' : 'rgba(255, 255, 255, 0.4)',
                         borderBottom: isRevealed ? 'none' : '5px solid #FF1493',
                         boxShadow: isRevealed ? '0 4px 6px rgba(0,0,0,0.1)' : 'none',
@@ -24,7 +24,7 @@ const WordBlanks = ({ word, guessedLetters, revealAll = false }) => {
                         alignItems: 'center',
                         justifyContent: 'center',
                         fontFamily: 'var(--font-ui)', // Cleaner readable font
-                        fontSize: '3rem',
+                        fontSize: 'var(--word-font)',
                         fontWeight: '900',
                         color: '#E0218A',
                         textTransform: 'uppercase',

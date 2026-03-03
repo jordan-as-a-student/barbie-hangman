@@ -8,9 +8,78 @@
 }
 
 :root {
-    --font-script: 'Dollie Script', 'Great Vibes', cursive;
-    --font-ui: 'Nunito', sans-serif;
+    --font-script: 'Lobster', cursive;
+    --font-ui: 'Lobster', cursive;
     --color-primary: #FF1493;
+
+    /* Responsive Sizing Defaults (Desktop/Large Tablet) */
+    --key-min-w: 45px;
+    --key-min-h: 55px;
+    --key-pad: 12px 15px;
+    --key-font: 2rem;
+
+    --word-w: 60px;
+    --word-h: 70px;
+    --word-font: 3rem;
+
+    --stage-height: 45vh;
+    --stage-min-h: 220px;
+    --title-font: 4.5rem;
+
+    --btn-pad: 16px 32px;
+    --btn-font: 1.5rem;
+
+    --life-size: 40px;
+    --life-font: 2.2rem;
+    --box-width: 400px;
+}
+
+@media (max-width: 850px),
+(max-height: 800px) {
+    :root {
+        --key-min-w: 35px;
+        --key-min-h: 45px;
+        --key-pad: 8px 12px;
+        --key-font: 1.5rem;
+
+        --word-w: 45px;
+        --word-h: 55px;
+        --word-font: 2.2rem;
+
+        --stage-min-h: 180px;
+        --title-font: 3.5rem;
+
+        --btn-pad: 12px 24px;
+        --btn-font: 1.2rem;
+
+        --life-size: 32px;
+        --life-font: 1.8rem;
+        --box-width: 300px;
+    }
+}
+
+@media (max-width: 480px),
+(max-height: 600px) {
+    :root {
+        --key-min-w: 28px;
+        --key-min-h: 38px;
+        --key-pad: 5px 6px;
+        --key-font: 1.1rem;
+
+        --word-w: 30px;
+        --word-h: 40px;
+        --word-font: 1.6rem;
+
+        --stage-min-h: 120px;
+        --title-font: 2.5rem;
+
+        --btn-pad: 8px 16px;
+        --btn-font: 1rem;
+
+        --life-size: 22px;
+        --life-font: 1.4rem;
+        --box-width: 250px;
+    }
 }
 
 * {
@@ -23,8 +92,9 @@ body {
     font-family: var(--font-ui);
     background-color: #FCE4F6;
     color: #E0218A;
-    overflow: hidden;
-    /* Prevent scrolling for single screen experience */
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Prevent cut off when extreme sizes happen */
     cursor: url('/sparkle-cursor.png'), auto;
     /* Placeholder cursor */
 }
@@ -115,7 +185,7 @@ button {
     padding: 0 10px;
     position: relative;
     /* Prevent shrinking below required height for full image display */
-    min-height: 40vh;
+    min-height: var(--stage-min-h);
 }
 
 .barbie-stage-area {
@@ -132,7 +202,6 @@ button {
 .keyboard-controls-area {
     /* Responsive height for keyboard / game */
     height: auto;
-    min-height: 35vh;
     background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.4) 60%, rgba(255, 255, 255, 0) 100%);
     padding: 20px 10px;
     display: flex;
@@ -146,12 +215,10 @@ button {
     .game-stage-container {
         /* On small screens, hide or shrink side panels */
         padding: 0;
-        min-height: 30vh;
     }
 
     .keyboard-controls-area {
-        min-height: 50vh;
-        padding-bottom: 30px;
+        padding-bottom: 20px;
     }
 }
 

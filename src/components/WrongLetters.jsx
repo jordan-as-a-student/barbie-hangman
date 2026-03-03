@@ -10,18 +10,19 @@ const WrongLetters = ({ guessedLetters, word }) => {
 
     return (
         <div className="wrong-letters" style={{
-            height: '40px',
+            height: '60px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '10px',
+            gap: '12px',
             color: '#FF69B4',
             fontWeight: 'bold'
         }}>
-            <span style={{ fontSize: '0.9rem' }}>Misses:</span>
+            <span style={{ fontSize: '1.5rem', fontFamily: 'var(--font-ui)' }}>Misses:</span>
             {wrongLetters.map((letter, i) => (
                 <span key={i} style={{
-                    fontSize: '1.2rem',
+                    fontSize: '2rem',
+                    fontFamily: 'var(--font-ui)',
                     textDecoration: 'line-through',
                     opacity: 0.7
                 }}>

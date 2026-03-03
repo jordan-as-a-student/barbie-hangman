@@ -1,0 +1,59 @@
+.background-music-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.music-toggle-btn {
+    background-color: var(--barbie-light-pink, #FFB6C1);
+    /* Fallback */
+    background: linear-gradient(135deg, #FF69B4 0%, #FFB6C1 100%);
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 0;
+    outline: none;
+}
+
+.music-toggle-btn.playing {
+    animation: pulse-music 2s infinite ease-in-out;
+}
+
+@keyframes pulse-music {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 20, 147, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 20, 147, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 20, 147, 0);
+    }
+}
+
+.music-toggle-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+    box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
+}
+
+.music-toggle-btn:hover .music-icon {
+    color: white;
+    transform: scale(1.1);
+}
+
+.music-icon {
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}

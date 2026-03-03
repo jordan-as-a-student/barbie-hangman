@@ -10,8 +10,8 @@ const LivesCounter = ({ maxLives, wrongGuesses }) => {
                 const isLost = i < wrongGuesses;
                 return (
                     <div key={i} style={{
-                        width: '45px',
-                        height: '45px',
+                        width: 'var(--life-size)',
+                        height: 'var(--life-size)',
                         opacity: isLost ? 0.3 : 1,
                         filter: isLost ? 'grayscale(100%)' : 'none',
                         backgroundImage: 'url("/images/barbie-head.png")',
@@ -25,7 +25,7 @@ const LivesCounter = ({ maxLives, wrongGuesses }) => {
             })}
             <div style={{
                 color: '#FFF',
-                fontSize: '2.2rem',
+                fontSize: 'var(--life-font)',
                 marginLeft: '15px',
                 fontFamily: 'var(--font-script)',
                 textShadow: '2px 2px 4px rgba(255,20,147,0.5)'

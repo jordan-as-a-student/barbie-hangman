@@ -28,7 +28,7 @@ export const theme = {
     white: '#FFFFFF',
     black: '#000000',
     transparent: 'transparent',
-    
+
     // Semantic aliases
     primary: '#FF1493',
     secondary: '#FFB6C1',
@@ -38,7 +38,7 @@ export const theme = {
     success: '#FF66C4',
     error: '#EC008C',
   },
-  
+
   gradients: {
     main: 'linear-gradient(135deg, #FF69B4 0%, #FFB6C1 100%)',
     hotPink: 'linear-gradient(180deg, #FF1493 0%, #FF008C 100%)',
@@ -48,8 +48,8 @@ export const theme = {
   },
 
   fonts: {
-    script: "'Great Vibes', cursive", // Fallback script font
-    ui: "'Nunito', sans-serif", // Rounded, friendly UI font
+    script: "'Lobster', cursive", // Fallback script font
+    ui: "'Lobster', cursive", // Rounded, friendly UI font
   },
 
   sparkles: {

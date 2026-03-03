@@ -14,9 +14,9 @@ const BarbieStage = ({ gameStatus }) => {
         <div style={{
             position: 'relative',
             width: '100%',
-            maxWidth: '350px',
-            height: '45vh', // Responsive height
-            minHeight: '280px',
+            maxWidth: 'var(--box-width)',
+            height: 'var(--stage-height)',
+            minHeight: 'var(--stage-min-h)',
             margin: '0 auto',
             display: 'flex',
             justifyContent: 'center',
@@ -50,7 +50,7 @@ const BarbieStage = ({ gameStatus }) => {
                     width: '100%',
                     textAlign: 'center',
                     fontFamily: 'var(--font-script)',
-                    fontSize: '2rem',
+                    fontSize: 'calc(var(--title-font) * 0.65)',
                     color: '#FFF',
                     textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
                     zIndex: 3
@@ -58,28 +58,7 @@ const BarbieStage = ({ gameStatus }) => {
                     {barbieName}
                 </div>
 
-                {/* Slanted Help Text */}
-                <div style={{
-                    position: 'absolute',
-                    left: '-20px',
-                    top: '30%',
-                    transform: 'rotate(-20deg)',
-                    fontFamily: 'var(--font-script)',
-                    fontWeight: '900',
-                    color: '#FFF',
-                    backgroundColor: '#FF1493',
-                    padding: '8px 12px',
-                    borderRadius: '15px',
-                    boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
-                    width: '120px',
-                    textAlign: 'center',
-                    zIndex: 20,
-                    border: '3px solid #FFF',
-                    fontSize: '0.9rem',
-                    lineHeight: '1.2'
-                }}>
-                    HELP YOUR BARBIE ESCAPE HER BOX!
-                </div>
+
             </div>
 
             {/* The actual doll inside */}

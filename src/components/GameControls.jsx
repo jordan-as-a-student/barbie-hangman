@@ -22,17 +22,17 @@ const GameControls = ({ word, guessedLetters, wrongGuesses, maxLives, guessLette
         }}>
             {gameStatus === 'won' && <Confetti />}
 
-            <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', marginBottom: '5px' }}>
+            <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginBottom: '5px', flexWrap: 'wrap' }}>
                 <button
                     onClick={resetSetup}
                     style={{
-                        padding: '12px 24px',
+                        padding: 'var(--btn-pad)',
                         background: '#FFF',
                         color: '#FF1493',
                         border: '2px solid #FF1493',
                         borderRadius: '25px',
                         fontWeight: 'bold',
-                        fontSize: '1.2rem',
+                        fontSize: 'var(--btn-font)',
                         cursor: 'pointer',
                         boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
                     }}>
@@ -42,13 +42,13 @@ const GameControls = ({ word, guessedLetters, wrongGuesses, maxLives, guessLette
                     <button
                         onClick={revealHint}
                         style={{
-                            padding: '12px 24px',
+                            padding: 'var(--btn-pad)',
                             background: '#FF1493',
                             color: '#FFF',
                             border: 'none',
                             borderRadius: '25px',
                             fontWeight: 'bold',
-                            fontSize: '1.2rem',
+                            fontSize: 'var(--btn-font)',
                             cursor: 'pointer',
                             boxShadow: '0 4px 6px rgba(0,0,0,0.2)'
                         }}>
@@ -56,6 +56,25 @@ const GameControls = ({ word, guessedLetters, wrongGuesses, maxLives, guessLette
                     </button>
                 )}
             </div>
+
+            {!isGameOver && (
+                <div style={{
+                    fontFamily: 'var(--font-script)',
+                    fontWeight: '900',
+                    color: '#FFF',
+                    backgroundColor: '#FF1493',
+                    padding: '10px 30px',
+                    borderRadius: '20px',
+                    boxShadow: '0 5px 15px rgba(255, 20, 147, 0.3)',
+                    border: '3px solid #FFF',
+                    fontSize: '1.8rem',
+                    textAlign: 'center',
+                    marginTop: '5px',
+                    animation: 'float 3s infinite ease-in-out'
+                }}>
+                    Help your Barbie escape her box!
+                </div>
+            )}
 
             <WordBlanks word={word} guessedLetters={guessedLetters} revealAll={gameStatus === 'lost'} />
 
@@ -79,21 +98,21 @@ const GameControls = ({ word, guessedLetters, wrongGuesses, maxLives, guessLette
                     <h2 style={{
                         color: '#FFF',
                         fontFamily: 'var(--font-script)',
-                        fontSize: '4rem',
+                        fontSize: 'var(--title-font)',
                         textShadow: '3px 3px 6px rgba(255, 20, 147, 0.8), 0 0 20px rgba(255, 255, 255, 0.5)'
                     }}>
-                        {gameStatus === 'won' ? '✨ YOU SAVED BARBIE! ✨' : '💔 OH NO! BARBIE NEEDS YOU! 💔'}
+                        {gameStatus === 'won' ? 'You saved Barbie' : 'Oh no! Barbie needs you'}
                     </h2>
                     <button
                         onClick={startNewGame}
                         style={{
                             marginTop: '15px',
-                            padding: '12px 30px',
+                            padding: 'var(--btn-pad)',
                             borderRadius: '30px',
                             background: '#FF1493',
                             color: 'white',
                             fontFamily: 'var(--font-script)',
-                            fontSize: '2rem',
+                            fontSize: 'calc(var(--btn-font) * 1.3)',
                             border: '3px solid #FFF',
                             boxShadow: '0 8px 20px rgba(255, 20, 147, 0.6)',
                             transition: 'transform 0.2s',
@@ -102,7 +121,7 @@ const GameControls = ({ word, guessedLetters, wrongGuesses, maxLives, guessLette
                         onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
                         onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
                     >
-                        Play Again 💖
+                        Play Again
                     </button>
                 </div>
             )}

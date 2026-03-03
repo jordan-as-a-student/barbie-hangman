@@ -2,14 +2,13 @@ import React from 'react';
 import { useBarbie } from './context/BarbieContext';
 import { useHangmanGame } from './hooks/useHangmanGame';
 // Placeholder imports - will implement next
-import WardrobePanel from './components/WardrobePanel';
 // import BarbieImage from './components/BarbieImage'; // Replaced by BarbieStage
 import BarbieStage from './components/BarbieStage';
 import GameControls from './components/GameControls';
 import SparkleCursor from './components/SparkleCursor';
 import BarbieSelectionScreen from './components/screens/BarbieSelectionScreen';
-// import WardrobeClosetView from './components/WardrobeClosetView';
 import FloatingSparkles from './components/FloatingSparkles';
+import BackgroundMusic from './components/BackgroundMusic';
 
 const App = () => {
   const { hasSetupFinished } = useBarbie();
@@ -19,6 +18,7 @@ const App = () => {
     <div className="app-container">
       <SparkleCursor />
       <FloatingSparkles />
+      <BackgroundMusic />
 
       {!hasSetupFinished ? (
         <BarbieSelectionScreen />

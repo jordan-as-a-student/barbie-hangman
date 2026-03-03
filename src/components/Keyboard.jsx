@@ -9,7 +9,8 @@ const Keyboard = ({ onGuess, guessedLetters, disabled }) => {
             flexWrap: 'wrap',
             justifyContent: 'center',
             gap: '10px',
-            maxWidth: '100%',
+            maxWidth: '800px',
+            width: '100%',
             margin: '10px auto',
             padding: '5px'
         }}>
@@ -21,14 +22,14 @@ const Keyboard = ({ onGuess, guessedLetters, disabled }) => {
                         onClick={() => onGuess(letter)}
                         disabled={isGuessed || disabled}
                         style={{
-                            minWidth: '40px',
-                            minHeight: '50px',
-                            padding: '10px 15px',
+                            minWidth: 'var(--key-min-w)',
+                            minHeight: 'var(--key-min-h)',
+                            padding: 'var(--key-pad)',
                             borderRadius: '12px',
                             backgroundColor: isGuessed ? '#FFC1E3' : '#FF1493',
                             color: isGuessed ? '#FFF' : '#FFF',
                             fontFamily: 'var(--font-ui)',
-                            fontSize: '1.6rem', // Larger font
+                            fontSize: 'var(--key-font)',
                             fontWeight: '900',
                             opacity: isGuessed ? 0.5 : 1,
                             cursor: isGuessed || disabled ? 'default' : 'pointer',
